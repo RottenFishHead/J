@@ -38,6 +38,10 @@ def index(request):
     total_fixed_expenses = float(f"{total_fixed_expenses:.2f}")
     net_income = total_monthly_income - total_all_expenses
 
+    # Calculate percentages for expenses
+    monthly_expenses_percentage = (total_monthly_expenses / total_all_expenses * 100) if total_all_expenses > 0 else 0
+    fixed_expenses_percentage = (total_fixed_expenses / total_all_expenses * 100) if total_all_expenses > 0 else 0
+
     context = {
         'monthly_incomes': monthly_incomes,
         'total_monthly_income': total_monthly_income,
@@ -47,6 +51,8 @@ def index(request):
         'total_fixed_expenses': total_fixed_expenses,
         'total_all_expenses': total_all_expenses,
         'net_income': net_income,
+        'monthly_expenses_percentage': monthly_expenses_percentage,
+        'fixed_expenses_percentage': fixed_expenses_percentage,
         'start_date': start_date,
         'end_date': end_date,
     }
