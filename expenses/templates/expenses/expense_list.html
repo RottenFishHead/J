@@ -30,6 +30,6 @@
         </tbody>
       </table>
     </div>
-    <p class='p-4 fw-bold'>Total Expenses for the Month: ${{ total_expenses|floatformat:2  }}</p>
+    <p class='p-4 fw-bold'>Total Expenses for the Month: ${{ total_expenses|default:0|floatformat:2  }}</p>
   </div>
 {% endblock %}

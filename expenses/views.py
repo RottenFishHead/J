@@ -36,7 +36,7 @@ def expense_list(request):
         'expenses': expenses,
         'current_month': current_month,
         'expenses_by_category': expenses_by_category,
-        'total_expenses': expenses.aggregate(Sum('amount'))['amount__sum'],
+        'total_expenses': expenses.aggregate(Sum('amount'))['amount__sum'] or 0,
         'grouped_expenses': grouped_expenses,
     }
 
@@ -166,7 +166,7 @@ def expense_overview(request):
     current_month = timezone.now().month
     current_year = timezone.now().year
     expenses = Expense.objects.filter(created__month=current_month, created__year=current_year)
-    total_expenses = expenses.aggregate(Sum('amount'))['amount__sum']
+    total_expenses = expenses.aggregate(Sum('amount'))['amount__sum'] or 0
      # Truncate total_expenses to two decimal places as a string
     total_expenses = f"{total_expenses:.2f}"
     # Data for fixed_expense_list
