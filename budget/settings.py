@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import dj_database_url
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -10,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-n0-&fo&@i#wl$@7o)tkdw$+s8a1c)kt1lvmio7((a4rax%ug0+'
+SECRET_KEY = 'lcJeDpf4o2IgrMx6AzwqjdC6LBkOBwWuMKN6tQVsZ9Q5zIkz2J'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -62,12 +63,29 @@ TEMPLATES = [
 WSGI_APPLICATION = 'budget.wsgi.application'
 
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default='postgresql://fly-user:Gl7axsx3TH2hx4lhpRun7d9R@pgbouncer.w8675082kmj03pk4.flympg.net/fly-db',
+        conn_max_age=600,
+        conn_health_checks=True,
+    )
 }
+# Postgres cluster pokerdb created
+#   Username:    postgres
+#   Password:    r8p1z9DWyPRU2yy
+#   Hostname:    pokerdb.internal
+#   Flycast:     fdaa:9:efb:0:1::a
+#   Proxy port:  5432
+#   Postgres port:  5433
+#   Connection string: postgres://postgres:r8p1z9DWyPRU2yy@pokerdb.flycast:5432
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
