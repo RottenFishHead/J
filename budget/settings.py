@@ -16,7 +16,7 @@ SECRET_KEY = 'lcJeDpf4o2IgrMx6AzwqjdC6LBkOBwWuMKN6tQVsZ9Q5zIkz2J'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['kp-budget.fly.dev', 'localhost', '127.0.0.1', 'https://kp-budget.fly.dev']
 
 
 # Application definition
@@ -72,19 +72,16 @@ WSGI_APPLICATION = 'budget.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://fly-user:Gl7axsx3TH2hx4lhpRun7d9R@pgbouncer.w8675082kmj03pk4.flympg.net/fly-db',
+        default="postgres://kp_budget:GHiMBpzvycp3WlJ@kp-budget-db.flycast:5432/kp_budget?sslmode=disable",
         conn_max_age=600,
         conn_health_checks=True,
     )
 }
-# Postgres cluster pokerdb created
-#   Username:    postgres
-#   Password:    r8p1z9DWyPRU2yy
-#   Hostname:    pokerdb.internal
-#   Flycast:     fdaa:9:efb:0:1::a
-#   Proxy port:  5432
-#   Postgres port:  5433
-#   Connection string: postgres://postgres:r8p1z9DWyPRU2yy@pokerdb.flycast:5432
+
+CSRF_TRUSTED_ORIGINS = ["https://kp-budget.fly.dev",  # full URL with https
+]
+
+FLY_CONSUL_URL = 'c1cc933a81b8b070'
 
 
 # Password validation

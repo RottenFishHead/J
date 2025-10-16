@@ -1,0 +1,2628 @@
+[
+{
+  "model": "income.source",
+  "pk": 1,
+  "fields": {
+    "name": "Raveon",
+    "created": "2025-10-16"
+  }
+},
+{
+  "model": "income.source",
+  "pk": 2,
+  "fields": {
+    "name": "Social Security",
+    "created": "2025-10-16"
+  }
+},
+{
+  "model": "income.source",
+  "pk": 3,
+  "fields": {
+    "name": "Poker",
+    "created": "2025-10-16"
+  }
+},
+{
+  "model": "income.source",
+  "pk": 4,
+  "fields": {
+    "name": "Reselling",
+    "created": "2025-10-16"
+  }
+},
+{
+  "model": "expenses.category",
+  "pk": 1,
+  "fields": {
+    "name": "Grocery"
+  }
+},
+{
+  "model": "expenses.category",
+  "pk": 2,
+  "fields": {
+    "name": "Dining Out"
+  }
+},
+{
+  "model": "expenses.category",
+  "pk": 3,
+  "fields": {
+    "name": "Entertainment"
+  }
+},
+{
+  "model": "expenses.category",
+  "pk": 4,
+  "fields": {
+    "name": "Automotive"
+  }
+},
+{
+  "model": "expenses.category",
+  "pk": 5,
+  "fields": {
+    "name": "Gas"
+  }
+},
+{
+  "model": "expenses.category",
+  "pk": 6,
+  "fields": {
+    "name": "Clothing"
+  }
+},
+{
+  "model": "expenses.category",
+  "pk": 7,
+  "fields": {
+    "name": "Pet"
+  }
+},
+{
+  "model": "expenses.category",
+  "pk": 8,
+  "fields": {
+    "name": "Medical"
+  }
+},
+{
+  "model": "expenses.category",
+  "pk": 9,
+  "fields": {
+    "name": "Medicine"
+  }
+},
+{
+  "model": "expenses.category",
+  "pk": 10,
+  "fields": {
+    "name": "Travel"
+  }
+},
+{
+  "model": "expenses.category",
+  "pk": 11,
+  "fields": {
+    "name": "Misc"
+  }
+},
+{
+  "model": "expenses.category",
+  "pk": 12,
+  "fields": {
+    "name": "Boat"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "income",
+    "model": "source"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "income",
+    "model": "income"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "expenses",
+    "model": "category"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "expenses",
+    "model": "fixedexpense"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "expenses",
+    "model": "expense"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "expenses",
+    "model": "budget"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "expenses",
+    "model": "debt"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "expenses",
+    "model": "savings"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "expenses",
+    "model": "payment"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "income",
+    "model": "recurringincome"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "yl541tz8g59d04sneya1xckqsyuoavr3",
+  "fields": {
+    "session_data": ".eJxVjEEOgjAQRe_StWmYmTIWl-45QzO0U4saSCisjHdXEha6_e-9_zJBtrWEreoSxmQuBszpdxskPnTaQbrLdJttnKd1GQe7K_ag1fZz0uf1cP8OitTyrcW1nJVbJMHYaUO-4czdWQARMrvIhACaEiNBdr5T8okieEfIot68P8JmNuQ:1v9TaW:g_MSs25gjCSg5d76Q7-HqL_KWmtie1VZz9WRuRx1JJU",
+    "expire_date": "2025-10-30T19:24:36.712Z"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add source",
+    "content_type": [
+      "income",
+      "source"
+    ],
+    "codename": "add_source"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change source",
+    "content_type": [
+      "income",
+      "source"
+    ],
+    "codename": "change_source"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete source",
+    "content_type": [
+      "income",
+      "source"
+    ],
+    "codename": "delete_source"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view source",
+    "content_type": [
+      "income",
+      "source"
+    ],
+    "codename": "view_source"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add income",
+    "content_type": [
+      "income",
+      "income"
+    ],
+    "codename": "add_income"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change income",
+    "content_type": [
+      "income",
+      "income"
+    ],
+    "codename": "change_income"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete income",
+    "content_type": [
+      "income",
+      "income"
+    ],
+    "codename": "delete_income"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view income",
+    "content_type": [
+      "income",
+      "income"
+    ],
+    "codename": "view_income"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add category",
+    "content_type": [
+      "expenses",
+      "category"
+    ],
+    "codename": "add_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change category",
+    "content_type": [
+      "expenses",
+      "category"
+    ],
+    "codename": "change_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete category",
+    "content_type": [
+      "expenses",
+      "category"
+    ],
+    "codename": "delete_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view category",
+    "content_type": [
+      "expenses",
+      "category"
+    ],
+    "codename": "view_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add fixed expense",
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "codename": "add_fixedexpense"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change fixed expense",
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "codename": "change_fixedexpense"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete fixed expense",
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "codename": "delete_fixedexpense"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view fixed expense",
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "codename": "view_fixedexpense"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add expense",
+    "content_type": [
+      "expenses",
+      "expense"
+    ],
+    "codename": "add_expense"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change expense",
+    "content_type": [
+      "expenses",
+      "expense"
+    ],
+    "codename": "change_expense"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete expense",
+    "content_type": [
+      "expenses",
+      "expense"
+    ],
+    "codename": "delete_expense"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view expense",
+    "content_type": [
+      "expenses",
+      "expense"
+    ],
+    "codename": "view_expense"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add budget",
+    "content_type": [
+      "expenses",
+      "budget"
+    ],
+    "codename": "add_budget"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change budget",
+    "content_type": [
+      "expenses",
+      "budget"
+    ],
+    "codename": "change_budget"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete budget",
+    "content_type": [
+      "expenses",
+      "budget"
+    ],
+    "codename": "delete_budget"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view budget",
+    "content_type": [
+      "expenses",
+      "budget"
+    ],
+    "codename": "view_budget"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add debt",
+    "content_type": [
+      "expenses",
+      "debt"
+    ],
+    "codename": "add_debt"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change debt",
+    "content_type": [
+      "expenses",
+      "debt"
+    ],
+    "codename": "change_debt"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete debt",
+    "content_type": [
+      "expenses",
+      "debt"
+    ],
+    "codename": "delete_debt"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view debt",
+    "content_type": [
+      "expenses",
+      "debt"
+    ],
+    "codename": "view_debt"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add savings",
+    "content_type": [
+      "expenses",
+      "savings"
+    ],
+    "codename": "add_savings"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change savings",
+    "content_type": [
+      "expenses",
+      "savings"
+    ],
+    "codename": "change_savings"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete savings",
+    "content_type": [
+      "expenses",
+      "savings"
+    ],
+    "codename": "delete_savings"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view savings",
+    "content_type": [
+      "expenses",
+      "savings"
+    ],
+    "codename": "view_savings"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add payment",
+    "content_type": [
+      "expenses",
+      "payment"
+    ],
+    "codename": "add_payment"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change payment",
+    "content_type": [
+      "expenses",
+      "payment"
+    ],
+    "codename": "change_payment"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete payment",
+    "content_type": [
+      "expenses",
+      "payment"
+    ],
+    "codename": "delete_payment"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view payment",
+    "content_type": [
+      "expenses",
+      "payment"
+    ],
+    "codename": "view_payment"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add recurring income",
+    "content_type": [
+      "income",
+      "recurringincome"
+    ],
+    "codename": "add_recurringincome"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change recurring income",
+    "content_type": [
+      "income",
+      "recurringincome"
+    ],
+    "codename": "change_recurringincome"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete recurring income",
+    "content_type": [
+      "income",
+      "recurringincome"
+    ],
+    "codename": "delete_recurringincome"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view recurring income",
+    "content_type": [
+      "income",
+      "recurringincome"
+    ],
+    "codename": "view_recurringincome"
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$xuIP7TkHEKteStPi41T9w4$ToKTe3UZAzCCRuRRBXLX/aTBqSetJH9K06Rv0RLhb8M=",
+    "last_login": "2025-10-16T19:24:36.706Z",
+    "is_superuser": true,
+    "username": "karen",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-10-15T15:32:47.278Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2025-10-15T15:45:00.083Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "category"
+    ],
+    "object_id": "1",
+    "object_repr": "Grocery",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2025-10-15T15:45:06.611Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "category"
+    ],
+    "object_id": "2",
+    "object_repr": "Dining Out",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2025-10-15T15:45:17.329Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "category"
+    ],
+    "object_id": "3",
+    "object_repr": "Entertainment",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2025-10-15T15:45:25.673Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "category"
+    ],
+    "object_id": "4",
+    "object_repr": "Automotive",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2025-10-15T15:45:29.912Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "category"
+    ],
+    "object_id": "5",
+    "object_repr": "Gas",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2025-10-15T15:45:36.806Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "category"
+    ],
+    "object_id": "6",
+    "object_repr": "Clothing",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2025-10-15T15:45:44.758Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "category"
+    ],
+    "object_id": "7",
+    "object_repr": "Pet",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2025-10-15T15:45:50.869Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "category"
+    ],
+    "object_id": "8",
+    "object_repr": "Medical",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2025-10-15T15:45:59.693Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "category"
+    ],
+    "object_id": "9",
+    "object_repr": "Medicine",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2025-10-15T15:46:04.397Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "category"
+    ],
+    "object_id": "10",
+    "object_repr": "Travel",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2025-10-15T15:46:10.907Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "category"
+    ],
+    "object_id": "11",
+    "object_repr": "Misc",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2025-10-15T15:46:20.507Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "category"
+    ],
+    "object_id": "12",
+    "object_repr": "Boat",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2025-10-15T15:49:07.238Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "1",
+    "object_repr": "Shutterstock",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2025-10-15T15:49:35.069Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "2",
+    "object_repr": "eFax",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2025-10-15T15:50:04.282Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "3",
+    "object_repr": "Apple",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2025-10-15T15:50:22.895Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "4",
+    "object_repr": "PokerGo",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2025-10-15T15:50:48.739Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "5",
+    "object_repr": "Soapy Joes",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2025-10-15T15:51:39.759Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "6",
+    "object_repr": "OpenArt AI",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2025-10-15T15:51:58.879Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "7",
+    "object_repr": "Dropbox",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2025-10-15T15:52:19.886Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "8",
+    "object_repr": "Regal",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2025-10-15T15:52:56.161Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "9",
+    "object_repr": "Microsoft",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2025-10-15T15:53:27.099Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "10",
+    "object_repr": "Bridgecrest",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2025-10-15T15:54:14.162Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "11",
+    "object_repr": "YouTube TV",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2025-10-15T15:54:45.479Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "3",
+    "object_repr": "Apple",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Amount\", \"Day to pay\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2025-10-15T15:55:16.715Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "12",
+    "object_repr": "AT&T",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2025-10-15T15:55:47.446Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "13",
+    "object_repr": "Amazon Prime",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2025-10-15T15:56:29.194Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "14",
+    "object_repr": "United Healthcare",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2025-10-15T15:56:57.548Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "15",
+    "object_repr": "ChatGPT",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2025-10-15T15:57:19.840Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "16",
+    "object_repr": "Medium",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2025-10-15T15:57:53.038Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "17",
+    "object_repr": "Network Solutions",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2025-10-15T15:58:22.786Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "18",
+    "object_repr": "Fly.io",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2025-10-15T15:58:50.305Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "19",
+    "object_repr": "Peacock",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2025-10-15T15:59:14.205Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "20",
+    "object_repr": "Paramount Plus",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2025-10-15T15:59:37.048Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "21",
+    "object_repr": "CA Storage Unit",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2025-10-15T16:00:03.073Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "22",
+    "object_repr": "Apple Penni",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2025-10-15T16:00:42.213Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "23",
+    "object_repr": "Blue Shield",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2025-10-15T16:01:03.161Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "24",
+    "object_repr": "Netflix",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2025-10-15T16:01:37.097Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "25",
+    "object_repr": "Audible",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2025-10-15T16:02:01.920Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "26",
+    "object_repr": "GitHub",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2025-10-15T16:03:39.294Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "27",
+    "object_repr": "Toyota Subscription",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2025-10-15T16:04:01.206Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "28",
+    "object_repr": "PBS",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2025-10-15T16:05:17.719Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "29",
+    "object_repr": "Ubersuggest SEO",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2025-10-15T16:05:34.751Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "30",
+    "object_repr": "Network Solutions",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2025-10-15T16:06:06.344Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "31",
+    "object_repr": "Furbo Pet Camera",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 45,
+  "fields": {
+    "action_time": "2025-10-15T16:06:39.013Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "32",
+    "object_repr": "Rent",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 46,
+  "fields": {
+    "action_time": "2025-10-15T16:07:18.852Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "33",
+    "object_repr": "Hulu",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 47,
+  "fields": {
+    "action_time": "2025-10-15T16:08:45.138Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "34",
+    "object_repr": "Noun Project",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 48,
+  "fields": {
+    "action_time": "2025-10-15T16:09:10.733Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "35",
+    "object_repr": "Spotify",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 49,
+  "fields": {
+    "action_time": "2025-10-15T16:11:33.593Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "36",
+    "object_repr": "Marina",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 50,
+  "fields": {
+    "action_time": "2025-10-15T16:12:09.708Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "expenses",
+      "fixedexpense"
+    ],
+    "object_id": "37",
+    "object_repr": "Vectorizer AI",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 51,
+  "fields": {
+    "action_time": "2025-10-16T15:06:56.736Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "income",
+      "source"
+    ],
+    "object_id": "1",
+    "object_repr": "Raveon",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 52,
+  "fields": {
+    "action_time": "2025-10-16T15:07:21.493Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "income",
+      "source"
+    ],
+    "object_id": "2",
+    "object_repr": "Social Security",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 53,
+  "fields": {
+    "action_time": "2025-10-16T15:07:27.264Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "income",
+      "source"
+    ],
+    "object_id": "3",
+    "object_repr": "Poker",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 54,
+  "fields": {
+    "action_time": "2025-10-16T15:07:31.633Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "income",
+      "source"
+    ],
+    "object_id": "4",
+    "object_repr": "Reselling",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 55,
+  "fields": {
+    "action_time": "2025-10-16T15:10:31.554Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "income",
+      "recurringincome"
+    ],
+    "object_id": "1",
+    "object_repr": "Paycheck - $2104.93 on day 7",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 56,
+  "fields": {
+    "action_time": "2025-10-16T15:10:55.157Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "income",
+      "recurringincome"
+    ],
+    "object_id": "2",
+    "object_repr": "Paycheck 2 - $2104.93 on day 21",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 57,
+  "fields": {
+    "action_time": "2025-10-16T15:11:41.065Z",
+    "user": [
+      "karen"
+    ],
+    "content_type": [
+      "income",
+      "recurringincome"
+    ],
+    "object_id": "3",
+    "object_repr": "SS check - $1800.00 on day 8",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "Shutterstock",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "19.00",
+    "day_to_pay": 15,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T15:49:07.235Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 2,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "eFax",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "18.99",
+    "day_to_pay": 14,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T15:49:35.066Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 3,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "Apple",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "39.99",
+    "day_to_pay": 8,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T15:54:45.478Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 4,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "PokerGo",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "10.00",
+    "day_to_pay": 14,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T15:50:22.893Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 5,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "Soapy Joes",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "34.99",
+    "day_to_pay": 14,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T15:50:48.736Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 6,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "OpenArt AI",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "14.00",
+    "day_to_pay": 14,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T15:51:39.757Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 7,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "Dropbox",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "11.00",
+    "day_to_pay": 14,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T17:01:26.419Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 8,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "Regal",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "24.44",
+    "day_to_pay": 14,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T15:52:19.884Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 9,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "Microsoft",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "12.50",
+    "day_to_pay": 10,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T15:52:56.159Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 10,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "Bridgecrest",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "691.00",
+    "day_to_pay": 8,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T15:53:27.096Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 11,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "YouTube TV",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "41.86",
+    "day_to_pay": 8,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T15:54:14.161Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 12,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "AT&T",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "428.51",
+    "day_to_pay": 8,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T15:55:16.713Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 13,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "Amazon Prime",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "16.23",
+    "day_to_pay": 7,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T15:55:47.444Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 14,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "United Healthcare",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "142.60",
+    "day_to_pay": 6,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T15:56:29.192Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 15,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "ChatGPT",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "20.00",
+    "day_to_pay": 6,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T15:56:57.547Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 16,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "Medium",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "5.00",
+    "day_to_pay": 6,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T15:57:19.839Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 17,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "Network Solutions",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "64.96",
+    "day_to_pay": 6,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T15:57:53.036Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 18,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "Fly.io",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "277.58",
+    "day_to_pay": 3,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T15:58:22.784Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 19,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "Peacock",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "18.12",
+    "day_to_pay": 3,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T15:58:50.303Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 20,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "Paramount Plus",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "12.99",
+    "day_to_pay": 3,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T15:59:14.204Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 21,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "CA Storage Unit",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "207.00",
+    "day_to_pay": 3,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T15:59:37.046Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 22,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "Apple Penni",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "15.99",
+    "day_to_pay": 2,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T16:00:03.072Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 23,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "Blue Shield",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "126.00",
+    "day_to_pay": 1,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T16:00:42.211Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 24,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "Netflix",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "26.65",
+    "day_to_pay": 1,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T16:01:03.160Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 25,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "Audible",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "15.94",
+    "day_to_pay": 29,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T16:01:37.095Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 26,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "GitHub",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "39.00",
+    "day_to_pay": 29,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T16:02:01.918Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 27,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "Toyota Subscription",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "25.00",
+    "day_to_pay": 29,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T16:03:39.292Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 28,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "PBS",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "5.00",
+    "day_to_pay": 25,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T16:04:01.204Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 29,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "Ubersuggest SEO",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "49.00",
+    "day_to_pay": 23,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T16:05:17.716Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 30,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "Network Solutions",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "10.99",
+    "day_to_pay": 23,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T16:05:34.749Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 31,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "Furbo Pet Camera",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "20.97",
+    "day_to_pay": 22,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T16:06:06.343Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 32,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "Rent",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "880.00",
+    "day_to_pay": 1,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T16:06:39.011Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 33,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "Hulu",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "20.25",
+    "day_to_pay": 18,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T16:07:18.850Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 34,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "Noun Project",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "10.99",
+    "day_to_pay": 17,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T16:08:45.136Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 35,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "Spotify",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "19.00",
+    "day_to_pay": 16,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T16:09:10.731Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 36,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "Marina",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "511.65",
+    "day_to_pay": 1,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T16:11:33.592Z"
+  }
+},
+{
+  "model": "expenses.fixedexpense",
+  "pk": 37,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "name": "Vectorizer AI",
+    "frequency": "PT",
+    "autopay": true,
+    "amount": "9.99",
+    "day_to_pay": 8,
+    "created": "2025-10-15",
+    "updated_at": "2025-10-15T16:12:09.705Z"
+  }
+},
+{
+  "model": "income.recurringincome",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "source": 1,
+    "name": "Paycheck",
+    "frequency": "BW",
+    "amount": "2104.93",
+    "day_to_receive": 7,
+    "is_active": true,
+    "created": "2025-10-16",
+    "updated_at": "2025-10-16T15:10:31.553Z"
+  }
+},
+{
+  "model": "income.recurringincome",
+  "pk": 2,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "source": 1,
+    "name": "Paycheck 2",
+    "frequency": "BW",
+    "amount": "2104.93",
+    "day_to_receive": 21,
+    "is_active": true,
+    "created": "2025-10-16",
+    "updated_at": "2025-10-16T15:10:55.155Z"
+  }
+},
+{
+  "model": "income.recurringincome",
+  "pk": 3,
+  "fields": {
+    "user": [
+      "karen"
+    ],
+    "source": 2,
+    "name": "SS check",
+    "frequency": "MT",
+    "amount": "1800.00",
+    "day_to_receive": 8,
+    "is_active": true,
+    "created": "2025-10-16",
+    "updated_at": "2025-10-16T15:11:41.063Z"
+  }
+}
+]
