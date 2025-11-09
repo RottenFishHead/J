@@ -64,20 +64,20 @@ TEMPLATES = [
 WSGI_APPLICATION = 'budget.wsgi.application'
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 # DATABASES = {
-#     'default': dj_database_url.config(
-#         default="postgres://ragland:d792da613f0d3407@ragland.flycast:5432/ragland?sslmode=disable",
-#         conn_max_age=600,
-#         conn_health_checks=True,
-#     )
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
 # }
+
+DATABASES = {
+    'default': dj_database_url.config(
+        default="postgres://ragland:d792da613f0d3407@ragland.flycast:5432/ragland?sslmode=disable",
+        conn_max_age=600,
+        conn_health_checks=True,
+    )
+}
 
 CSRF_TRUSTED_ORIGINS = ["https://ragland.fly.dev",  # full URL with https
 ]
