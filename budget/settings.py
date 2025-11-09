@@ -64,20 +64,20 @@ TEMPLATES = [
 WSGI_APPLICATION = 'budget.wsgi.application'
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
-    'default': dj_database_url.config(
-        default="postgres://ragland:d792da613f0d3407@ragland.flycast:5432/ragland?sslmode=disable",
-        conn_max_age=600,
-        conn_health_checks=True,
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default="postgres://ragland:d792da613f0d3407@ragland.flycast:5432/ragland?sslmode=disable",
+#         conn_max_age=600,
+#         conn_health_checks=True,
+#     )
+# }
 
 CSRF_TRUSTED_ORIGINS = ["https://ragland.fly.dev",  # full URL with https
 ]
@@ -120,13 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
-
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
 
 
 # Default primary key field type
