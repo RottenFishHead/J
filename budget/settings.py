@@ -11,12 +11,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'lcJeDpf4o2IgrMx6AzwqjdC6LBkOBwWuMKN6tQVsZ9Q5zIkz2J'
+SECRET_KEY = 'abd85633c7f3f86c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['kp-budget.fly.dev', 'localhost', '127.0.0.1', 'https://kp-budget.fly.dev']
+ALLOWED_HOSTS = ['ragland.fly.dev', 'localhost', '127.0.0.1', 'https://ragland.fly.dev']
 
 
 # Application definition
@@ -64,20 +64,20 @@ TEMPLATES = [
 WSGI_APPLICATION = 'budget.wsgi.application'
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 # DATABASES = {
-#     'default': dj_database_url.config(
-#         default="postgres://kp_budget:GHiMBpzvycp3WlJ@kp-budget-db.flycast:5432/kp_budget?sslmode=disable",
-#         conn_max_age=600,
-#         conn_health_checks=True,
-#     )
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
 # }
+
+DATABASES = {
+    'default': dj_database_url.config(
+        default="postgres://ragland:d792da613f0d3407@ragland.flycast:5432/ragland?sslmode=disable",
+        conn_max_age=600,
+        conn_health_checks=True,
+    )
+}
 
 CSRF_TRUSTED_ORIGINS = ["https://kp-budget.fly.dev",  # full URL with https
 ]

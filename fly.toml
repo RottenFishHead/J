@@ -1,10 +1,10 @@
-# fly.toml app configuration file generated for kp-budget on 2025-10-16T08:48:42-07:00
+# fly.toml app configuration file generated for ragland on 2025-11-09T14:13:02-08:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'kp-budget'
-primary_region = 'lax'
+app = 'ragland'
+primary_region = 'dfw'
 console_command = '/code/manage.py shell'
 
 [build]
