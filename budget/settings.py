@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
@@ -63,20 +64,20 @@ TEMPLATES = [
 WSGI_APPLICATION = 'budget.wsgi.application'
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
-    'default': dj_database_url.config(
-        default="postgres://kp_budget:GHiMBpzvycp3WlJ@kp-budget-db.flycast:5432/kp_budget?sslmode=disable",
-        conn_max_age=600,
-        conn_health_checks=True,
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default="postgres://kp_budget:GHiMBpzvycp3WlJ@kp-budget-db.flycast:5432/kp_budget?sslmode=disable",
+#         conn_max_age=600,
+#         conn_health_checks=True,
+#     )
+# }
 
 CSRF_TRUSTED_ORIGINS = ["https://kp-budget.fly.dev",  # full URL with https
 ]

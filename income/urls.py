@@ -2,7 +2,7 @@
 from django.urls import path
 from .views import (income_list, income_detail, income_create, income_edit, income_delete, monthly_income_view,
                     recurring_income_list, recurring_income_create, recurring_income_edit, recurring_income_delete,
-                    process_all_recurring_income)
+                    process_all_recurring_income, source_create_ajax)
 
 app_name = 'income' 
 
@@ -20,4 +20,7 @@ urlpatterns = [
     path('recurring/<int:pk>/edit/', recurring_income_edit, name='recurring_income_edit'),
     path('recurring/<int:pk>/delete/', recurring_income_delete, name='recurring_income_delete'),
     path('process-recurring/', process_all_recurring_income, name='process_all_recurring_income'),
+    
+    # AJAX endpoints
+    path('ajax/source/create/', source_create_ajax, name='source_create_ajax'),
 ]

@@ -1,0 +1,58 @@
+{% extends 'expenses/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2 class="pt-3 pb-3">{{ action }} Savings Goal</h2>
+    
+    <form method="post">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-8">
+                <div class="mb-3">
+                    <label for="{{ form.name.id_for_label }}" class="form-label">Goal Name:</label>
+                    {{ form.name }}
+                    {% if form.name.errors %}
+                        <div class="text-danger">{{ form.name.errors }}</div>
+                    {% endif %}
+                    <div class="form-text">e.g., Emergency Fund, Vacation, New Car</div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="{{ form.description.id_for_label }}" class="form-label">Description:</label>
+                    {{ form.description }}
+                    {% if form.description.errors %}
+                        <div class="text-danger">{{ form.description.errors }}</div>
+                    {% endif %}
+                </div>
+                
+                <div class="mb-3">
+                    <label for="{{ form.goal.id_for_label }}" class="form-label">Goal Amount:</label>
+                    <div class="input-group">
+                        <span class="input-group-text">$</span>
+                        {{ form.goal }}
+                    </div>
+                    {% if form.goal.errors %}
+                        <div class="text-danger">{{ form.goal.errors }}</div>
+                    {% endif %}
+                    <div class="form-text">Total amount you want to save</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">{{ action }} Savings Goal</button>
+            <a href="{% url 'expenses:savings_list' %}" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
+
+<script>
+// Add Bootstrap classes to form fields
+document.addEventListener('DOMContentLoaded', function() {
+    const formControls = document.querySelectorAll('input[type="text"], input[type="number"], textarea');
+    formControls.forEach(function(control) {
+        control.classList.add('form-control');
+    });
+});
+</script>
+{% endblock %}

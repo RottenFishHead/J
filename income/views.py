@@ -209,3 +209,43 @@ def monthly_income_view(request):
     }
 
     return render(request, 'income/monthly_income.html', context)
+
+@login_required
+def source_create_ajax(request):
+    """AJAX endpoint to create a new income source"""
+    import json
+    from django.http import JsonResponse
+    from .models import Source
+    
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            source_name = data.get('name', '').strip()
+            
+            if not source_name:
+                return JsonResponse({'success': False, 'error': 'Source name is required'})
+            
+            # Check if source already exists
+            existing_source = Source.objects.filter(name__iexact=source_name).first()
+            if existing_source:
+                return JsonResponse({
+                    'success': True,
+                    'source': {
+                        'id': existing_source.id,
+                        'name': existing_source.name
+                    }
+                })
+            
+            # Create new source
+            source = Source.objects.create(name=source_name)
+            return JsonResponse({
+                'success': True,
+                'source': {
+                    'id': source.id,
+                    'name': source.name
+                }
+            })
+        except Exception as e:
+            return JsonResponse({'success': False, 'error': str(e)})
+    
+    return JsonResponse({'success': False, 'error': 'Invalid request method'})

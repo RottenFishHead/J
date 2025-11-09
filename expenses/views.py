@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Expense, FixedExpense, Category, Budget, Debt, Payment, Savings
-from .forms import ExpenseForm, FixedExpenseForm, BudgetForm, PaymentForm
+from .forms import ExpenseForm, FixedExpenseForm, BudgetForm, PaymentForm, SavingsForm, DebtForm
 from django.utils import timezone
+from django.contrib import messages
 from django.db.models import Sum, F, DecimalField, Value
 from django.db.models.functions import Coalesce
 from datetime import datetime, timedelta
@@ -14,8 +15,9 @@ from datetime import datetime
 
 @login_required 
 def expense_list(request):
-    current_month = timezone.now().month
-    current_year = timezone.now().year
+    current_date = timezone.now()
+    current_month = current_date.month
+    current_year = current_date.year
 
     # Get all expenses for the current month and year
     expenses = Expense.objects.filter(created__month=current_month, created__year=current_year)
@@ -34,7 +36,7 @@ def expense_list(request):
 
     context = {
         'expenses': expenses,
-        'current_month': current_month,
+        'current_date': current_date,
         'expenses_by_category': expenses_by_category,
         'total_expenses': expenses.aggregate(Sum('amount'))['amount__sum'] or 0,
         'grouped_expenses': grouped_expenses,
@@ -356,8 +358,15 @@ def yearly_budget_remaining(request):
 @login_required 
 def debt_list(request):
     debts = Debt.objects.all()
+    total_owed = sum(debt.owed for debt in debts)
+    total_paid = sum(debt.total_amount_paid for debt in debts)
+    total_remaining = total_owed - total_paid
+    
     context = {
-        'debts': debts
+        'debts': debts,
+        'total_owed': total_owed,
+        'total_paid': total_paid,
+        'total_remaining': total_remaining,
     }
 
     return render(request, 'expenses/debt_list.html', context)
@@ -371,6 +380,19 @@ def debt_details(request, debt_id):
         'debt_left': debt_left
     }
     return render(request, 'expenses/debt_details.html', context)
+
+@login_required
+def debt_create(request):
+    """Create a new debt"""
+    if request.method == 'POST':
+        form = DebtForm(request.POST)
+        if form.is_valid():
+            debt = form.save()
+            messages.success(request, f'Debt "{debt.name}" created successfully!')
+            return redirect('expenses:debt_list')
+    else:
+        form = DebtForm()
+    return render(request, 'expenses/debt_form.html', {'form': form, 'action': 'Create'})
 
 @login_required 
 def savings_list(request):
@@ -391,6 +413,43 @@ def savings_details(request, savings_id):
         'goal_left': goal_left
     }
     return render(request, 'expenses/saving_details.html', context)
+
+@login_required
+def savings_create(request):
+    """Create a new savings goal"""
+    if request.method == 'POST':
+        form = SavingsForm(request.POST)
+        if form.is_valid():
+            savings = form.save()
+            messages.success(request, f'Savings goal "{savings.name}" created successfully!')
+            return redirect('expenses:savings_list')
+    else:
+        form = SavingsForm()
+    return render(request, 'expenses/savings_form.html', {'form': form, 'action': 'Create'})
+
+@login_required
+def add_money_to_savings(request, savings_id):
+    """Add money to an existing savings goal"""
+    saving = get_object_or_404(Savings, pk=savings_id)
+    if request.method == 'POST':
+        amount_paid = request.POST.get('amount_paid')
+        if amount_paid:
+            try:
+                amount_paid = float(amount_paid)
+                if amount_paid > 0:
+                    Payment.objects.create(
+                        savings=saving,
+                        amount_paid=amount_paid
+                    )
+                    messages.success(request, f'Successfully added ${amount_paid:.2f} to {saving.name}!')
+                else:
+                    messages.error(request, 'Amount must be greater than zero.')
+            except ValueError:
+                messages.error(request, 'Invalid amount entered.')
+        else:
+            messages.error(request, 'Please enter an amount.')
+    
+    return redirect('expenses:savings_list')
 
 @login_required 
 def create_payment(request, debt_id):

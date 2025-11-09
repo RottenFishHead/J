@@ -2,7 +2,7 @@
 
 {% block content %}
   <div class="container">
-    <h2 class="pt-3 pb-3">Expense List for the {{ current_month }}th Month</h2>
+    <h2 class="pt-3 pb-3">Expense List for {{ current_date|date:"F" }}</h2>
     <div class="table-responsive">
       <table class="table table-striped">
         <thead>

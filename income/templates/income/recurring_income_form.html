@@ -10,7 +10,12 @@
             <div class="col-md-6">
                 <div class="mb-3">
                     <label for="{{ form.source.id_for_label }}" class="form-label">Source:</label>
-                    {{ form.source }}
+                    <div class="input-group">
+                        {{ form.source }}
+                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addSourceModal">
+                            <i class="bi bi-plus-lg"></i> Add
+                        </button>
+                    </div>
                     {% if form.source.errors %}
                         <div class="text-danger">{{ form.source.errors }}</div>
                     {% endif %}
@@ -71,6 +76,29 @@
     </form>
 </div>
 
+<!-- Add Source Modal -->
+<div class="modal fade" id="addSourceModal" tabindex="-1" aria-labelledby="addSourceModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addSourceModalLabel">Add New Source</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="newSourceName" class="form-label">Source Name:</label>
+                    <input type="text" class="form-control" id="newSourceName" placeholder="e.g., Poker, Ebay, Job">
+                    <div id="sourceError" class="text-danger mt-2" style="display: none;"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" id="saveSourceBtn">Save Source</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
 // Add Bootstrap classes to form fields
 document.addEventListener('DOMContentLoaded', function() {
@@ -83,6 +111,64 @@ document.addEventListener('DOMContentLoaded', function() {
     checkboxes.forEach(function(checkbox) {
         checkbox.classList.add('form-check-input');
     });
+});
+
+// Handle adding a new source
+document.getElementById('saveSourceBtn').addEventListener('click', function() {
+    const sourceName = document.getElementById('newSourceName').value.trim();
+    const errorDiv = document.getElementById('sourceError');
+    
+    if (!sourceName) {
+        errorDiv.textContent = 'Please enter a source name.';
+        errorDiv.style.display = 'block';
+        return;
+    }
+    
+    // Get CSRF token
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+    
+    // Send AJAX request to create the source
+    fetch('{% url "income:source_create_ajax" %}', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrftoken
+        },
+        body: JSON.stringify({
+            name: sourceName
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Add the new source to the dropdown
+            const sourceSelect = document.getElementById('{{ form.source.id_for_label }}');
+            const newOption = new Option(data.source.name, data.source.id, true, true);
+            sourceSelect.add(newOption);
+            
+            // Close the modal
+            const modal = bootstrap.Modal.getInstance(document.getElementById('addSourceModal'));
+            modal.hide();
+            
+            // Clear the input and error
+            document.getElementById('newSourceName').value = '';
+            errorDiv.style.display = 'none';
+        } else {
+            errorDiv.textContent = data.error || 'Failed to create source.';
+            errorDiv.style.display = 'block';
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        errorDiv.textContent = 'An error occurred. Please try again.';
+        errorDiv.style.display = 'block';
+    });
+});
+
+// Clear error when modal is closed
+document.getElementById('addSourceModal').addEventListener('hidden.bs.modal', function() {
+    document.getElementById('newSourceName').value = '';
+    document.getElementById('sourceError').style.display = 'none';
 });
 </script>
 {% endblock %}

@@ -1,7 +1,10 @@
 {% extends 'expenses/base.html' %}
 
 {% block content %}
-  <h2>Fixed Expenses - ${{ total_amount }}</h2>
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Fixed Expenses - ${{ total_amount }}</h2>
+    <a href="{% url 'expenses:fixed_expense_create' %}" class="btn btn-primary">+ Add Fixed Expense</a>
+  </div>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -36,6 +39,5 @@
       {% endfor %}
     </tbody>
   </table>
-  <a href="{% url 'expenses:fixed_expense_create' %}" class="btn btn-primary">Create a new fixed expense</a>
-  <p style="m-6"> </p>
+ 
 {% endblock content %}

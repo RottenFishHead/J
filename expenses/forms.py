@@ -1,5 +1,5 @@
 from django import forms
-from .models import Expense, FixedExpense, Budget, Payment
+from .models import Expense, FixedExpense, Budget, Payment, Savings, Debt
 
 class ExpenseForm(forms.ModelForm):
     class Meta:
@@ -24,3 +24,22 @@ class PaymentForm(forms.ModelForm):
     class Meta:
         model = Payment
         fields = ['debt', 'savings', 'fixed_expense', 'amount_paid']
+
+class SavingsForm(forms.ModelForm):
+    class Meta:
+        model = Savings
+        fields = ['name', 'description', 'goal']
+        widgets = {
+            'description': forms.Textarea(attrs={'rows': 3}),
+            'goal': forms.NumberInput(attrs={'step': '0.01', 'min': '0.01'}),
+        }
+
+class DebtForm(forms.ModelForm):
+    class Meta:
+        model = Debt
+        fields = ['name', 'description', 'owed', 'due_by']
+        widgets = {
+            'description': forms.Textarea(attrs={'rows': 3}),
+            'owed': forms.NumberInput(attrs={'step': '0.01', 'min': '0.01'}),
+            'due_by': forms.DateInput(attrs={'type': 'date'}),
+        }

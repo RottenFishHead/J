@@ -2,7 +2,7 @@ from django.urls import path
 from .views import expense_list, expense_detail, expense_create, expense_update, expense_delete, monthly_expense_totals, monthly_expenses_list,\
     fixed_expense_list, fixed_expense_detail, fixed_expense_create, fixed_expense_update, fixed_expense_delete, \
         expense_overview, budget_list, create_budget, edit_budget, delete_budget, calculate_budget_remaining, \
-            yearly_budget_remaining, debt_list, debt_details, savings_list, savings_details, create_payment
+            yearly_budget_remaining, debt_list, debt_details, debt_create, savings_list, savings_details, savings_create, add_money_to_savings, create_payment
 app_name = 'expenses' 
 
 urlpatterns = [
@@ -25,8 +25,11 @@ urlpatterns = [
     path('calculate_budget_remaining/', calculate_budget_remaining, name='calculate_budget_remaining'),
     path('yearly_budget_remaining/', yearly_budget_remaining, name='yearly_budget_remaining'),
     path('debt-list/', debt_list, name='debt_list'),
+    path('debt/create/', debt_create, name='debt_create'),
     path('debt-details/<int:debt_id>/', debt_details, name='debt_details'),
     path('savings-list/', savings_list, name='savings_list'),
+    path('savings/create/', savings_create, name='savings_create'),
     path('saving-details/<int:savings_id>/', savings_details, name='savings_details'),
-    path('create_payment/', create_payment, name='create_payment'),
+    path('savings/<int:savings_id>/add-money/', add_money_to_savings, name='add_money_to_savings'),
+    path('debt/<int:debt_id>/create-payment/', create_payment, name='create_payment'),
 ]

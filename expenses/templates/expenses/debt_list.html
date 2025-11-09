@@ -1,9 +1,27 @@
-{% extends 'expenses/base.html' %}  {# Assuming you have a base.html file for your base template #}
+{% extends 'expenses/base.html' %}
+{% load humanize %}
 {% block content %}
 
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>Debt List</h1>
+    <a href="{% url 'expenses:debt_create' %}" class="btn btn-primary">+ Add Debt</a>
+</div>
 
-<h1>Debt List</h1>
-<table class="table">
+<div class="alert alert-info mb-3">
+    <div class="row">
+        <div class="col-md-4">
+            <strong>Total Owed:</strong> ${{ total_owed|floatformat:2|intcomma }}
+        </div>
+        <div class="col-md-4">
+            <strong>Total Paid:</strong> ${{ total_paid|floatformat:2|intcomma }}
+        </div>
+        <div class="col-md-4">
+            <strong>Remaining:</strong> <span class="text-danger fw-bold">${{ total_remaining|floatformat:2|intcomma }}</span>
+        </div>
+    </div>
+</div>
+
+<table class="table table-striped">
     <thead>
         <tr>
             <th>Debtor Name</th>
