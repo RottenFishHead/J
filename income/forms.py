@@ -1,14 +1,14 @@
 from django import forms
-from .models import Income, RecurringIncome
+from .models import Income, reocurringIncome
 
 class IncomeForm(forms.ModelForm):
     class Meta:
         model = Income
         fields = ['user', 'source', 'amount', 'created']
 
-class RecurringIncomeForm(forms.ModelForm):
+class reocurringIncomeForm(forms.ModelForm):
     class Meta:
-        model = RecurringIncome
+        model = reocurringIncome
         fields = ['source', 'name', 'frequency', 'amount', 'day_to_receive', 'is_active']
         widgets = {
             'day_to_receive': forms.NumberInput(attrs={'min': 1, 'max': 31}),

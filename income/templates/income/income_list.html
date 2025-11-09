@@ -6,8 +6,8 @@
     
     <div class="mb-3">
       <a class="btn btn-primary" href="{% url 'income:income_create' %}">Add new income</a>
-      <a class="btn btn-success" href="{% url 'income:recurring_income_list' %}">Manage Recurring Income</a>
-      <a class="btn btn-info" href="{% url 'income:process_all_recurring_income' %}">Process Due Income</a>
+      <a class="btn btn-success" href="{% url 'income:reocurring_income_list' %}">Manage reocurring Income</a>
+      <a class="btn btn-info" href="{% url 'income:process_all_reocurring_income' %}">Process Due Income</a>
     </div>
     
     <table class="table table-striped">
@@ -27,7 +27,7 @@
             <td>${{ income.amount }}</td>
             <td>{{ income.created }}</td>
             <td>
-              {% if income.recurring_income %}
+              {% if income.reocurring_income %}
                 <span class="badge bg-info">Auto-Generated</span>
               {% else %}
                 <span class="badge bg-primary">Manual</span>

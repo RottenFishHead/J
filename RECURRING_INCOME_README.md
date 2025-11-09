@@ -1,10 +1,10 @@
 # Automatic Income Entries Feature
 
-This feature allows you to set up recurring income entries that will automatically create income records on specified days of the month.
+This feature allows you to set up reocurring income entries that will automatically create income records on specified days of the month.
 
 ## How It Works
 
-1. **Set Up Recurring Income**: Create recurring income entries specifying:
+1. **Set Up reocurring Income**: Create reocurring income entries specifying:
    - Source (salary, freelance, etc.)
    - Name (description)
    - Amount
@@ -22,7 +22,7 @@ This feature allows you to set up recurring income entries that will automatical
 ### Web Interface
 
 1. Go to Income List page
-2. Click "Manage Recurring Income" to set up recurring entries
+2. Click "Manage reocurring Income" to set up reocurring entries
 3. Click "Process Due Income" to manually trigger processing
 4. View auto-generated entries (marked with "Auto-Generated" badge)
 
@@ -31,37 +31,37 @@ This feature allows you to set up recurring income entries that will automatical
 For automation (cron jobs, scheduled tasks):
 
 ```bash
-# Process all users' recurring income
-python manage.py process_recurring_income
+# Process all users' reocurring income
+python manage.py process_reocurring_income
 
 # Process specific user only
-python manage.py process_recurring_income --user-id 1
+python manage.py process_reocurring_income --user-id 1
 
 # Dry run (see what would be processed without creating entries)
-python manage.py process_recurring_income --dry-run
+python manage.py process_reocurring_income --dry-run
 ```
 
 ## Features
 
 - **Smart Duplicate Prevention**: Won't create duplicate entries for the same month
-- **User-Specific**: Each user manages their own recurring income
+- **User-Specific**: Each user manages their own reocurring income
 - **Flexible Scheduling**: Support for different frequencies
-- **Manual Override**: Can disable/enable recurring income entries
+- **Manual Override**: Can disable/enable reocurring income entries
 - **Audit Trail**: Tracks which entries were auto-generated vs manual
 
 ## Integration
 
-The automatic processing is integrated into the `income_create` view, so recurring income is processed whenever a user visits the income creation page. This ensures timely processing without requiring separate automation setup.
+The automatic processing is integrated into the `income_create` view, so reocurring income is processed whenever a user visits the income creation page. This ensures timely processing without requiring separate automation setup.
 
 ## Database Changes
 
-- New `RecurringIncome` model
-- `Income.recurring_income` field links auto-generated entries back to their source
-- Admin interface updated to manage recurring income
+- New `reocurringIncome` model
+- `Income.reocurring_income` field links auto-generated entries back to their source
+- Admin interface updated to manage reocurring income
 
 ## Templates
 
-- `recurring_income_list.html` - Manage recurring income entries
-- `recurring_income_form.html` - Create/edit recurring income
-- `recurring_income_confirm_delete.html` - Delete confirmation
-- Updated `income_list.html` with recurring income management links
+- `reocurring_income_list.html` - Manage reocurring income entries
+- `reocurring_income_form.html` - Create/edit reocurring income
+- `reocurring_income_confirm_delete.html` - Delete confirmation
+- Updated `income_list.html` with reocurring income management links

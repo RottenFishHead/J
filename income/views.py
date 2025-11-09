@@ -1,10 +1,10 @@
 # views.py
 from django.shortcuts import render, get_object_or_404, redirect
-from .forms import IncomeForm, RecurringIncomeForm
+from .forms import IncomeForm, reocurringIncomeForm
 from django.shortcuts import render
 from django.db.models import Sum
 from django.contrib.auth.decorators import login_required
-from .models import Income, RecurringIncome
+from .models import Income, reocurringIncome
 from expenses.models import Expense, FixedExpense
 from django.contrib import messages
 from datetime import datetime, date
@@ -70,8 +70,8 @@ def income_detail(request, pk):
     return render(request, 'income/income_detail.html', {'income': income})
 
 def income_create(request):
-    # Check for and create any due recurring income entries
-    process_recurring_income(request.user)
+    # Check for and create any due reocurring income entries
+    process_reocurring_income(request.user)
     
     if request.method == 'POST':
         form = IncomeForm(request.POST)
@@ -84,66 +84,66 @@ def income_create(request):
         form = IncomeForm()
     return render(request, 'income/income_form.html', {'form': form})
 
-def process_recurring_income(user):
-    """Process all due recurring income for a user"""
-    due_incomes = RecurringIncome.objects.due_today().filter(user=user)
+def process_reocurring_income(user):
+    """Process all due reocurring income for a user"""
+    due_incomes = reocurringIncome.objects.due_today().filter(user=user)
     created_count = 0
     
-    for recurring_income in due_incomes:
-        if recurring_income.create_income_entry():
+    for reocurring_income in due_incomes:
+        if reocurring_income.create_income_entry():
             created_count += 1
     
     return created_count
 
 @login_required
-def recurring_income_list(request):
-    recurring_incomes = RecurringIncome.objects.filter(user=request.user)
-    return render(request, 'income/recurring_income_list.html', {'recurring_incomes': recurring_incomes})
+def reocurring_income_list(request):
+    reocurring_incomes = reocurringIncome.objects.filter(user=request.user)
+    return render(request, 'income/reocurring_income_list.html', {'reocurring_incomes': reocurring_incomes})
 
 @login_required
-def recurring_income_create(request):
+def reocurring_income_create(request):
     if request.method == 'POST':
-        form = RecurringIncomeForm(request.POST)
+        form = reocurringIncomeForm(request.POST)
         if form.is_valid():
-            recurring_income = form.save(commit=False)
-            recurring_income.user = request.user
-            recurring_income.save()
-            messages.success(request, 'Recurring income created successfully!')
-            return redirect('income:recurring_income_list')
+            reocurring_income = form.save(commit=False)
+            reocurring_income.user = request.user
+            reocurring_income.save()
+            messages.success(request, 'reocurring income created successfully!')
+            return redirect('income:reocurring_income_list')
     else:
-        form = RecurringIncomeForm()
-    return render(request, 'income/recurring_income_form.html', {'form': form, 'action': 'Create'})
+        form = reocurringIncomeForm()
+    return render(request, 'income/reocurring_income_form.html', {'form': form, 'action': 'Create'})
 
 @login_required
-def recurring_income_edit(request, pk):
-    recurring_income = get_object_or_404(RecurringIncome, pk=pk, user=request.user)
+def reocurring_income_edit(request, pk):
+    reocurring_income = get_object_or_404(reocurringIncome, pk=pk, user=request.user)
     if request.method == 'POST':
-        form = RecurringIncomeForm(request.POST, instance=recurring_income)
+        form = reocurringIncomeForm(request.POST, instance=reocurring_income)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Recurring income updated successfully!')
-            return redirect('income:recurring_income_list')
+            messages.success(request, 'reocurring income updated successfully!')
+            return redirect('income:reocurring_income_list')
     else:
-        form = RecurringIncomeForm(instance=recurring_income)
-    return render(request, 'income/recurring_income_form.html', {'form': form, 'action': 'Edit'})
+        form = reocurringIncomeForm(instance=reocurring_income)
+    return render(request, 'income/reocurring_income_form.html', {'form': form, 'action': 'Edit'})
 
 @login_required
-def recurring_income_delete(request, pk):
-    recurring_income = get_object_or_404(RecurringIncome, pk=pk, user=request.user)
+def reocurring_income_delete(request, pk):
+    reocurring_income = get_object_or_404(reocurringIncome, pk=pk, user=request.user)
     if request.method == 'POST':
-        recurring_income.delete()
-        messages.success(request, 'Recurring income deleted successfully!')
-        return redirect('income:recurring_income_list')
-    return render(request, 'income/recurring_income_confirm_delete.html', {'recurring_income': recurring_income})
+        reocurring_income.delete()
+        messages.success(request, 'reocurring income deleted successfully!')
+        return redirect('income:reocurring_income_list')
+    return render(request, 'income/reocurring_income_confirm_delete.html', {'reocurring_income': reocurring_income})
 
 @login_required
-def process_all_recurring_income(request):
-    """Manually trigger processing of all recurring income for the current user"""
-    created_count = process_recurring_income(request.user)
+def process_all_reocurring_income(request):
+    """Manually trigger processing of all reocurring income for the current user"""
+    created_count = process_reocurring_income(request.user)
     if created_count > 0:
-        messages.success(request, f'Created {created_count} new income entries from recurring income.')
+        messages.success(request, f'Created {created_count} new income entries from reocurring income.')
     else:
-        messages.info(request, 'No new recurring income entries were due.')
+        messages.info(request, 'No new reocurring income entries were due.')
     return redirect('income:income_list')
 
 def income_edit(request, pk):

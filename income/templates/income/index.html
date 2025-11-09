@@ -166,7 +166,7 @@ Financial Overview
                                 <td>{{ income.created|date:"M j, Y" }}</td>
                                 <td>{{ income.source|default:"N/A" }}</td>
                                 <td>
-                                    {% if income.recurring_income %}
+                                    {% if income.reocurring_income %}
                                         <span class="badge badge-auto">🤖 Auto</span>
                                     {% else %}
                                         <span class="badge badge-manual">✋ Manual</span>
@@ -240,7 +240,7 @@ Financial Overview
             <div class="card card-modern text-center p-3">
                 <h6 class="card-title">Manage</h6>
                 <div class="btn-group" role="group">
-                    <a href="{% url 'income:recurring_income_list' %}" class="btn btn-info">🔄 Recurring Income</a>
+                    <a href="{% url 'income:reocurring_income_list' %}" class="btn btn-info">🔄 reocurring Income</a>
                     <a href="{% url 'expenses:budget_list' %}" class="btn btn-warning">📊 Budgets</a>
                 </div>
             </div>

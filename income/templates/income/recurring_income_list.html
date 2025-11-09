@@ -2,11 +2,11 @@
 
 {% block content %}
 <div class="container">
-    <h2 class="pt-3 pb-3">Recurring Income</h2>
+    <h2 class="pt-3 pb-3">reocurring Income</h2>
     
     <div class="mb-3">
-        <a href="{% url 'income:recurring_income_create' %}" class="btn btn-primary">Add Recurring Income</a>
-        <a href="{% url 'income:process_all_recurring_income' %}" class="btn btn-success">Process Due Income</a>
+        <a href="{% url 'income:reocurring_income_create' %}" class="btn btn-primary">Add reocurring Income</a>
+        <a href="{% url 'income:process_all_reocurring_income' %}" class="btn btn-success">Process Due Income</a>
     </div>
 
     {% if messages %}
@@ -32,28 +32,28 @@
                 </tr>
             </thead>
             <tbody>
-                {% for recurring_income in recurring_incomes %}
+                {% for reocurring_income in reocurring_incomes %}
                     <tr>
-                        <td>{{ recurring_income.name }}</td>
-                        <td>{{ recurring_income.source }}</td>
-                        <td>${{ recurring_income.amount }}</td>
-                        <td>{{ recurring_income.day_to_receive }}</td>
-                        <td>{{ recurring_income.get_frequency_display }}</td>
+                        <td>{{ reocurring_income.name }}</td>
+                        <td>{{ reocurring_income.source }}</td>
+                        <td>${{ reocurring_income.amount }}</td>
+                        <td>{{ reocurring_income.day_to_receive }}</td>
+                        <td>{{ reocurring_income.get_frequency_display }}</td>
                         <td>
-                            {% if recurring_income.is_active %}
+                            {% if reocurring_income.is_active %}
                                 <span class="badge bg-success">Active</span>
                             {% else %}
                                 <span class="badge bg-secondary">Inactive</span>
                             {% endif %}
                         </td>
                         <td>
-                            <a href="{% url 'income:recurring_income_edit' recurring_income.pk %}" class="btn btn-sm btn-outline-primary">Edit</a>
-                            <a href="{% url 'income:recurring_income_delete' recurring_income.pk %}" class="btn btn-sm btn-outline-danger">Delete</a>
+                            <a href="{% url 'income:reocurring_income_edit' reocurring_income.pk %}" class="btn btn-sm btn-outline-primary">Edit</a>
+                            <a href="{% url 'income:reocurring_income_delete' reocurring_income.pk %}" class="btn btn-sm btn-outline-danger">Delete</a>
                         </td>
                     </tr>
                 {% empty %}
                     <tr>
-                        <td colspan="7" class="text-center">No recurring income entries found.</td>
+                        <td colspan="7" class="text-center">No reocurring income entries found.</td>
                     </tr>
                 {% endfor %}
             </tbody>
