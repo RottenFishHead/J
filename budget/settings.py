@@ -79,7 +79,7 @@ DATABASES = {
     )
 }
 
-CSRF_TRUSTED_ORIGINS = ["https://kp-budget.fly.dev",  # full URL with https
+CSRF_TRUSTED_ORIGINS = ["https://ragland.fly.dev",  # full URL with https
 ]
 
 FLY_CONSUL_URL = 'c1cc933a81b8b070'
