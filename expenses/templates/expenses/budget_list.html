@@ -1,15 +1,58 @@
-{% extends 'expenses/base.html' %}  {# Assuming you have a base.html file for your base template #}
+{% extends 'expenses/base.html' %}
+{% load humanize %}
 {% block content %}
 
-<h2>Budget List</h2>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1><i class="fas fa-wallet me-2"></i>Monthly Budget</h1>
+    <a href="{% url 'expenses:create_budget' %}" class="btn btn-primary">
+        <i class="fas fa-plus me-1"></i>Add Budget Item
+    </a>
+</div>
 
-{% for budget in budgets %}
-  <p>{{ budget.category }} - ${{ budget.amount }} -  <a href="{% url 'expenses:edit_budget' pk=budget.pk %}">Edit</a></p>
+{% if budgets %}
+    <div class="card">
+        <div class="table-responsive">
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Budget Amount</th>
+                        <th>Description</th>
+                        <th>Date Created</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for budget in budgets %}
+                    <tr>
+                        <td><strong>{{ budget.category }}</strong></td>
+                        <td class="text-success">${{ budget.amount|floatformat:2|intcomma }}</td>
+                        <td>{{ budget.description|default:"—" }}</td>
+                        <td>{{ budget.date|date:"M d, Y" }}</td>
+                        <td>
+                            <a href="{% url 'expenses:edit_budget' pk=budget.pk %}" class="btn btn-sm btn-primary">
+                                <i class="fas fa-edit"></i> Edit
+                            </a>
+                            <a href="{% url 'expenses:delete_budget' pk=budget.pk %}" class="btn btn-sm btn-danger">
+                                <i class="fas fa-trash"></i> Delete
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 
-{% endfor %}
-
-<p><a href="{% url 'expenses:create_budget' %}">
-  <button>Create New Budget Item</button>
-</a></p>
+    <div class="alert alert-info mt-4">
+        <strong><i class="fas fa-info-circle me-1"></i>Total Budget:</strong> 
+        ${{ total_budget|floatformat:2|intcomma }}
+    </div>
+{% else %}
+    <div class="alert alert-info">
+        <i class="fas fa-info-circle me-2"></i>
+        No budget items yet. Click "Add Budget Item" to create your first budget category.
+    </div>
+{% endif %}
 
 {% endblock %}

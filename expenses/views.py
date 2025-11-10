@@ -237,7 +237,8 @@ def fixed_expense_delete(request, pk):
 @login_required 
 def budget_list(request):
     budgets = Budget.objects.all()
-    return render(request, 'expenses/budget_list.html', {'budgets': budgets})
+    total_budget = sum(budget.amount for budget in budgets)
+    return render(request, 'expenses/budget_list.html', {'budgets': budgets, 'total_budget': total_budget})
 
 @login_required 
 def create_budget(request):

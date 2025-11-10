@@ -1,11 +1,64 @@
-{% extends 'expenses/base.html' %}  {# Assuming you have a base.html file for your base template #}
+{% extends 'expenses/base.html' %}
 {% block content %}
 
-<h2>{{ action }} Budget</h2>
-<form method="post" action="">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Save</button>
-</form>
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="mb-4">{{ action }} Budget</h2>
+                <form method="post" action="">
+                    {% csrf_token %}
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.category.id_for_label }}" class="form-label">Category</label>
+                        {{ form.category }}
+                        {% if form.category.errors %}
+                            <div class="text-danger">{{ form.category.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="{{ form.amount.id_for_label }}" class="form-label">Budget Amount</label>
+                        {{ form.amount }}
+                        {% if form.amount.errors %}
+                            <div class="text-danger">{{ form.amount.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="{{ form.description.id_for_label }}" class="form-label">Description (Optional)</label>
+                        {{ form.description }}
+                        {% if form.description.errors %}
+                            <div class="text-danger">{{ form.description.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save me-1"></i>Save Budget
+                        </button>
+                        <a href="{% url 'expenses:budget_list' %}" class="btn btn-secondary">
+                            <i class="fas fa-times me-1"></i>Cancel
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Add Bootstrap classes to form fields
+    document.addEventListener('DOMContentLoaded', function() {
+        const selects = document.querySelectorAll('select');
+        selects.forEach(select => select.classList.add('form-select'));
+        
+        const inputs = document.querySelectorAll('input[type="number"], input[type="text"]');
+        inputs.forEach(input => input.classList.add('form-control'));
+        
+        const textareas = document.querySelectorAll('textarea');
+        textareas.forEach(textarea => textarea.classList.add('form-control'));
+    });
+</script>
 
 {% endblock %}
