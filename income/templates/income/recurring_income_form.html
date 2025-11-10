@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container">
-    <h2 class="pt-3 pb-3">{{ action }} reocurring Income</h2>
+    <h2 class="pt-3 pb-3">{{ action }} recurring Income</h2>
     
     <form method="post">
         {% csrf_token %}
@@ -70,7 +70,7 @@
         </div>
         
         <div class="mb-3">
-            <button type="submit" class="btn btn-primary">{{ action }} reocurring Income</button>
+            <button type="submit" class="btn btn-primary">{{ action }} recurring Income</button>
             <a href="{% url 'income:reocurring_income_list' %}" class="btn btn-secondary">Cancel</a>
         </div>
     </form>

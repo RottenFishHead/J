@@ -5,13 +5,13 @@ from datetime import date
 
 
 class Command(BaseCommand):
-    help = 'Process all due reocurring income entries for all users'
+    help = 'Process all due recurring income entries for all users'
 
     def add_arguments(self, parser):
         parser.add_argument(
             '--user-id',
             type=int,
-            help='Process reocurring income for a specific user ID only',
+            help='Process recurring income for a specific user ID only',
         )
         parser.add_argument(
             '--dry-run',
@@ -21,7 +21,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         today = date.today()
-        self.stdout.write(f'Processing reocurring income for {today}...')
+        self.stdout.write(f'Processing recurring income for {today}...')
         
         # Filter users if specific user ID provided
         if options['user_id']:
@@ -37,7 +37,7 @@ class Command(BaseCommand):
         total_created = 0
         
         for user in users:
-            # Get all due reocurring income for this user
+            # Get all due recurring income for this user
             due_incomes = reocurringIncome.objects.due_today().filter(user=user)
             user_created = 0
             
@@ -87,4 +87,4 @@ class Command(BaseCommand):
                 )
             )
         else:
-            self.stdout.write('No reocurring income entries were due for processing.')
+            self.stdout.write('No recurring income entries were due for processing.')

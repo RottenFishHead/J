@@ -898,7 +898,7 @@
 {
   "model": "auth.permission",
   "fields": {
-    "name": "Can add reocurring income",
+    "name": "Can add recurring income",
     "content_type": [
       "income",
       "reocurringincome"
@@ -909,7 +909,7 @@
 {
   "model": "auth.permission",
   "fields": {
-    "name": "Can change reocurring income",
+    "name": "Can change recurring income",
     "content_type": [
       "income",
       "reocurringincome"
@@ -920,7 +920,7 @@
 {
   "model": "auth.permission",
   "fields": {
-    "name": "Can delete reocurring income",
+    "name": "Can delete recurring income",
     "content_type": [
       "income",
       "reocurringincome"
@@ -931,7 +931,7 @@
 {
   "model": "auth.permission",
   "fields": {
-    "name": "Can view reocurring income",
+    "name": "Can view recurring income",
     "content_type": [
       "income",
       "reocurringincome"

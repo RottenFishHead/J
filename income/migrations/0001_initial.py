@@ -68,7 +68,7 @@ class Migration(migrations.Migration):
                     "is_active",
                     models.BooleanField(
                         default=True,
-                        help_text="Whether this reocurring income is active",
+                        help_text="Whether this recurring income is active",
                     ),
                 ),
                 ("created", models.DateField(default=django.utils.timezone.now)),
@@ -114,7 +114,7 @@ class Migration(migrations.Migration):
                     "reocurring_income",
                     models.ForeignKey(
                         blank=True,
-                        help_text="Link to reocurring income if auto-generated",
+                        help_text="Link to recurring income if auto-generated",
                         null=True,
                         on_delete=django.db.models.deletion.SET_NULL,
                         to="income.reocurringincome",
