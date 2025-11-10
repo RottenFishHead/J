@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'abd85633c7f3f86c'
+SECRET_KEY = '957f185b86f933f7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -73,7 +73,7 @@ WSGI_APPLICATION = 'budget.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default="postgres://ragland:d792da613f0d3407@ragland.flycast:5432/ragland?sslmode=disable",
+        default="postgres://ragland:3ddbaf219720124b@ragland.flycast:5432/ragland?sslmode=disable",
         conn_max_age=600,
         conn_health_checks=True,
     )
