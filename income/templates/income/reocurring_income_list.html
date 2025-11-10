@@ -2,10 +2,10 @@
 
 {% block content %}
 <div class="container">
-    <h2 class="pt-3 pb-3">recurring Income</h2>
+    <h2 class="pt-3 pb-3">reocurring Income</h2>
     
     <div class="mb-3">
-        <a href="{% url 'income:reocurring_income_create' %}" class="btn btn-primary">Add recurring Income</a>
+        <a href="{% url 'income:reocurring_income_create' %}" class="btn btn-primary">Add reocurring Income</a>
         <a href="{% url 'income:process_all_reocurring_income' %}" class="btn btn-success">Process Due Income</a>
     </div>
 
@@ -53,7 +53,7 @@
                     </tr>
                 {% empty %}
                     <tr>
-                        <td colspan="7" class="text-center">No recurring income entries found.</td>
+                        <td colspan="7" class="text-center">No reocurring income entries found.</td>
                     </tr>
                 {% endfor %}
             </tbody>

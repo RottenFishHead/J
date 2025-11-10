@@ -18,7 +18,7 @@ class Source(models.Model):
     def __str__(self):
             return self.name
 
-class reocurringIncomeManager(models.Manager):
+class ReocurringIncomeManager(models.Manager):
     def due_today(self):
         today = now().date()
         return self.filter(day_to_receive=today.day, is_active=True)
@@ -27,24 +27,24 @@ class reocurringIncomeManager(models.Manager):
         today = now().date()
         return self.filter(day_to_receive__lte=today.day, is_active=True)
 
-class reocurringIncome(models.Model):
+class ReocurringIncome(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Recipient')
     source = models.ForeignKey(Source, on_delete=models.CASCADE, blank=False, null=False)
     name = models.CharField(max_length=50, blank=False, null=False)
     frequency = models.CharField(max_length=3, choices=FREQUENCY_CHOICES, default='MT')
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     day_to_receive = models.IntegerField(blank=False, null=False, help_text="Day of month to receive income (1-31)")
-    is_active = models.BooleanField(default=True, help_text="Whether this recurring income is active")
+    is_active = models.BooleanField(default=True, help_text="Whether this reocurring income is active")
     created = models.DateField(default=now)
     updated_at = models.DateTimeField(auto_now=True)
 
-    objects = reocurringIncomeManager()
+    objects = ReocurringIncomeManager()
     
     def __str__(self):
         return f"{self.name} - ${self.amount} on day {self.day_to_receive}"
 
     def create_income_entry(self):
-        """Create an actual Income entry from this recurring income"""
+        """Create an actual Income entry from this reocurring income"""
         from datetime import date
         today = date.today()
         
@@ -74,8 +74,8 @@ class Income(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     created = models.DateField(default=now)
-    reocurring_income = models.ForeignKey(reocurringIncome, on_delete=models.SET_NULL, blank=True, null=True, 
-                                       help_text="Link to recurring income if auto-generated")
+    reocurring_income = models.ForeignKey(ReocurringIncome, on_delete=models.SET_NULL, blank=True, null=True, 
+                                       help_text="Link to reocurring income if auto-generated")
  
 
     def __str__(self):

@@ -14,12 +14,12 @@ urlpatterns = [
     path('monthly-income/', monthly_income_view, name='monthly_income'),
     path('delete/<int:pk>/', income_delete, name='income_delete'),
     
-    # recurring income URLs
-    path('recurring/', reocurring_income_list, name='reocurring_income_list'),
-    path('recurring/new/', reocurring_income_create, name='reocurring_income_create'),
-    path('recurring/<int:pk>/edit/', reocurring_income_edit, name='reocurring_income_edit'),
-    path('recurring/<int:pk>/delete/', reocurring_income_delete, name='reocurring_income_delete'),
-    path('process-recurring/', process_all_reocurring_income, name='process_all_reocurring_income'),
+    # reocurring income URLs
+    path('reocurring/', reocurring_income_list, name='reocurring_income_list'),
+    path('reocurring/new/', reocurring_income_create, name='reocurring_income_create'),
+    path('reocurring/<int:pk>/edit/', reocurring_income_edit, name='reocurring_income_edit'),
+    path('reocurring/<int:pk>/delete/', reocurring_income_delete, name='reocurring_income_delete'),
+    path('process-reocurring/', process_all_reocurring_income, name='process_all_reocurring_income'),
     
     # AJAX endpoints
     path('ajax/source/create/', source_create_ajax, name='source_create_ajax'),
