@@ -59,7 +59,18 @@ TEMPLATES = [
             ],
         },
     },
-]
+]# Use cookies to store session data
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+
+# Set the session cookie to persist (e.g., 2 weeks)
+SESSION_COOKIE_AGE = 15552000  # 6 months in seconds
+
+# Allow session cookies to persist even after the browser is closed
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+
+SESSION_COOKIE_SECURE = True  # Ensures cookies are sent over HTTPS only
+SESSION_COOKIE_HTTPONLY = True  # Prevents JavaScript access to session cookies
+SESSION_COOKIE_SAMESITE = 'Lax'  # Protects against CSRF attacks
 
 WSGI_APPLICATION = 'budget.wsgi.application'
 
