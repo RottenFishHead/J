@@ -1,25 +1,26 @@
 from pathlib import Path
 import os
 import dj_database_url
+from dotenv import load_dotenv
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '957f185b86f933f7'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['ragland.fly.dev', 'localhost', '127.0.0.1', 'https://ragland.fly.dev']
 
+# Initialize environment variables
+load_dotenv()
 
-# Application definition
+# Fetch the SECRET_KEY from the environment variables
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
+# Raise an error if SECRET_KEY is not set
+if not SECRET_KEY:
+    raise ValueError("The SECRET_KEY environment variable is not set.")
 
 INSTALLED_APPS = [
     'income.apps.IncomeConfig',
@@ -84,9 +85,9 @@ WSGI_APPLICATION = 'budget.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default="postgres://ragland:3ddbaf219720124b@ragland.flycast:5432/ragland?sslmode=disable",
-        conn_max_age=600,
-        conn_health_checks=True,
+        default=os.getenv('DATABASE_URL'),  # Load DATABASE_URL from .env
+        conn_max_age=600,  # Optional: Keep database connections open for 600 seconds
+        conn_health_checks=True,  # Optional: Enable connection health checks
     )
 }
 
