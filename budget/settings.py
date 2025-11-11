@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['ragland.fly.dev', 'localhost', '127.0.0.1', 'https://ragland.fly.dev']
+ALLOWED_HOSTS = ['rbudget.fly.dev', 'localhost', '127.0.0.1', 'https://rbudget.fly.dev']
 
 # Initialize environment variables
 load_dotenv()
@@ -91,7 +91,7 @@ DATABASES = {
     )
 }
 
-CSRF_TRUSTED_ORIGINS = ["https://ragland.fly.dev",  # full URL with https
+CSRF_TRUSTED_ORIGINS = ["https://rbudget.fly.dev",  # full URL with https
 ]
 
 FLY_CONSUL_URL = 'c1cc933a81b8b070'
